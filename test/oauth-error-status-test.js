@@ -6,6 +6,11 @@ const assert = require('node:assert').strict;
 const { resolveOAuthErrorStatus } = require('../lib/tools');
 
 test('resolveOAuthErrorStatus tests', async t => {
+    t.after(() => {
+        // Force exit after tests to prevent hanging on Redis connections from loaded modules
+        setTimeout(() => process.exit(), 1000).unref();
+    });
+
     await t.test('returns numeric error code when it is a valid HTTP status', async () => {
         assert.strictEqual(resolveOAuthErrorStatus({ code: 400 }, {}), 400);
         assert.strictEqual(resolveOAuthErrorStatus({ code: 403 }, {}), 403);
@@ -49,6 +54,21 @@ test('resolveOAuthErrorStatus tests', async t => {
         assert.strictEqual(resolveOAuthErrorStatus({ code: undefined }, err), 502);
         assert.strictEqual(resolveOAuthErrorStatus({ code: null }, err), 502);
         assert.strictEqual(resolveOAuthErrorStatus({}, err), 502);
+    });
+
+    await t.test('returns 500 when err.statusCode is a string', async () => {
+        assert.strictEqual(resolveOAuthErrorStatus({ code: 'TooManyRequests' }, { statusCode: '429' }), 500);
+        assert.strictEqual(resolveOAuthErrorStatus({ code: 'BadRequest' }, { statusCode: 'error' }), 500);
+    });
+
+    await t.test('returns 500 when err.statusCode is below 400', async () => {
+        assert.strictEqual(resolveOAuthErrorStatus({ code: 'SomeError' }, { statusCode: 200 }), 500);
+        assert.strictEqual(resolveOAuthErrorStatus({ code: 'SomeError' }, { statusCode: 302 }), 500);
+        assert.strictEqual(resolveOAuthErrorStatus({ code: 'SomeError' }, { statusCode: 0 }), 500);
+    });
+
+    await t.test('returns 500 when err.oauthRequest.status is a string', async () => {
+        assert.strictEqual(resolveOAuthErrorStatus({ code: 'TooManyRequests' }, { oauthRequest: { status: '429' } }), 500);
     });
 
     await t.test('handles missing err parameter', async () => {
