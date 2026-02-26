@@ -12,11 +12,16 @@ concurrency:
 jobs:
     deploy:
         name: Deploy Demo App
-        runs-on: ubuntu-latest
+        runs-on: ubuntu-24.04
 
         steps:
             - name: Checkout
               uses: actions/checkout@v4
+
+            - name: Use Node.js 24
+              uses: actions/setup-node@v4
+              with:
+                  node-version: 24
 
             - name: Install SSH key
               uses: shimataro/ssh-key-action@v2
@@ -54,7 +59,7 @@ jobs:
 
     docker:
         name: Build Docker Image
-        runs-on: ubuntu-latest
+        runs-on: ubuntu-24.04
 
         steps:
             - name: Checkout

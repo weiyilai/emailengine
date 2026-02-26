@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Content-Type: text/plain; charset=ascii\n"
-"POT-Creation-Date: 2026-02-26 08:20+0000\n"
+"POT-Creation-Date: 2026-02-26 12:37+0000\n"
 
 #: views/config/license.hbs:45
 msgid "%d day"
@@ -253,7 +253,7 @@ msgstr ""
 #: lib/routes-ui.js:4874
 #: lib/routes-ui.js:5121
 #: lib/routes-ui.js:5157
-#: workers/api.js:2415
+#: workers/api.js:2417
 #: lib/ui-routes/account-routes.js:549
 #: lib/ui-routes/account-routes.js:585
 #: lib/ui-routes/account-routes.js:702
@@ -338,12 +338,12 @@ msgstr ""
 msgid "Subscription Management"
 msgstr ""
 
-#: workers/api.js:6909
-#: workers/api.js:7025
+#: workers/api.js:6911
+#: workers/api.js:7027
 msgid "Requested page not found"
 msgstr ""
 
-#: workers/api.js:6910
+#: workers/api.js:6912
 msgid "Something went wrong"
 msgstr ""
 
