@@ -1498,7 +1498,6 @@ Include your token in requests using one of these methods:
         handler: {
             directory: {
                 path: pathlib.join(__dirname, '..', 'static'),
-                redirectToSlash: true,
                 index: false
             }
         },
