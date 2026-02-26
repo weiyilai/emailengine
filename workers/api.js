@@ -1497,7 +1497,9 @@ Include your token in requests using one of these methods:
         path: '/static/{file*}',
         handler: {
             directory: {
-                path: pathlib.join(__dirname, '..', 'static')
+                path: pathlib.join(__dirname, '..', 'static'),
+                redirectToSlash: true,
+                index: false
             }
         },
         options: {
