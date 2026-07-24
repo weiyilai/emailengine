@@ -76,6 +76,14 @@
                             {{errorMessage}}
                             {{/ui/tooltip-rich}}
                             {{/if}}
+                            {{#if recentlyRestarted}}
+                            {{#> ui/tooltip-rich icon="icon-[tabler--refresh] text-warning"}}
+                            <strong>Recently restarted</strong><br>
+                            This worker came online noticeably later than the main process, so it started
+                            after the initial boot rather than with the rest of the fleet. See the Uptime
+                            column for when it last started.
+                            {{/ui/tooltip-rich}}
+                            {{/if}}
                         </span>
                     </td>
                     <td><span class="text-base-content/60 font-mono text-sm">#{{formatInteger threadId userLocale}}</span></td>
