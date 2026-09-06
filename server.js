@@ -30,11 +30,12 @@ try {
 // Set process title for easier identification in process lists
 process.title = 'emailengine';
 
-// Ensure Node.js version supports structuredClone (Node 17+)
-try {
-    structuredClone(true);
-} catch (err) {
-    console.error(`Node.js version ${process.version} is not supported. Please upgrade to Node.js 17 or later.`);
+// EmailEngine and its dependencies need Node 20 or newer, the same floor the engines field in
+// package.json declares. Checked before anything is required, so an older runtime gets this line
+// instead of a syntax error from a dependency. The check used to be a structuredClone probe, which
+// only caught Node 16 and older.
+if (Number(process.versions.node.split('.')[0]) < 20) {
+    console.error(`Node.js version ${process.version} is not supported. Please upgrade to Node.js 20 or later.`);
     process.exit(1);
 }
 
