@@ -1,10 +1,10 @@
 msgid ""
 msgstr ""
 "Content-Type: text/plain; charset=ascii\n"
-"POT-Creation-Date: 2026-09-05 19:50+0000\n"
+"POT-Creation-Date: 2026-09-06 02:46+0000\n"
 
 #: views/error.hbs:6
-#: workers/api.js:3162
+#: workers/api.js:3153
 msgid "Something went wrong"
 msgstr ""
 
@@ -26,31 +26,6 @@ msgid "%d day"
 msgid_plural "%d days"
 msgstr[0] ""
 msgstr[1] ""
-
-#: views/oauth-scope-error.hbs:5
-msgid "Insufficient Permissions"
-msgstr ""
-
-#: views/oauth-scope-error.hbs:10
-msgid ""
-"All requested permissions are required for this service to function "
-"properly. Some required permissions were not granted during sign-in."
-msgstr ""
-
-#: views/oauth-scope-error.hbs:14
-msgid "The following permissions were not granted:"
-msgstr ""
-
-#: views/oauth-scope-error.hbs:23
-msgid ""
-"Please try again and make sure all permission checkboxes are selected on "
-"the Google consent screen."
-msgstr ""
-
-#: views/oauth-scope-error.hbs:28
-#: views/account-identity-error.hbs:32
-msgid "Try Again"
-msgstr ""
 
 #: views/unsubscribe.hbs:7
 #: views/unsubscribe.hbs:60
@@ -106,6 +81,39 @@ msgstr ""
 msgid "Click <a href=\"%s\">here</a> to continue&mldr;"
 msgstr ""
 
+#: views/oauth-scope-error.hbs:5
+msgid "Insufficient Permissions"
+msgstr ""
+
+#: views/oauth-scope-error.hbs:10
+msgid ""
+"All requested permissions are required for this service to function "
+"properly. Some required permissions were not granted during sign-in."
+msgstr ""
+
+#: views/oauth-scope-error.hbs:14
+msgid "The following permissions were not granted:"
+msgstr ""
+
+#: views/oauth-scope-error.hbs:23
+msgid ""
+"Please try again and make sure all permission checkboxes are selected on "
+"the Google consent screen."
+msgstr ""
+
+#: views/oauth-scope-error.hbs:28
+#: views/account-identity-error.hbs:32
+msgid "Try Again"
+msgstr ""
+
+#: views/accounts/register/index.hbs:6
+msgid "Choose your email account provider"
+msgstr ""
+
+#: views/accounts/register/index.hbs:19
+msgid "Standard IMAP"
+msgstr ""
+
 #: views/accounts/register/imap.hbs:13
 msgid "Your name"
 msgstr ""
@@ -134,14 +142,6 @@ msgstr ""
 
 #: views/accounts/register/imap.hbs:55
 msgid "Continue"
-msgstr ""
-
-#: views/accounts/register/index.hbs:6
-msgid "Choose your email account provider"
-msgstr ""
-
-#: views/accounts/register/index.hbs:19
-msgid "Standard IMAP"
 msgstr ""
 
 #: views/accounts/register/imap-server.hbs:23
@@ -295,19 +295,19 @@ msgid ""
 "connect your account."
 msgstr ""
 
-#: lib/tools.js:1444
+#: lib/tools.js:1480
 #: lib/ui-routes/unsubscribe-routes.js:31
 #: lib/ui-routes/unsubscribe-routes.js:99
 msgid "Invalid input"
 msgstr ""
 
-#: lib/tools.js:2309
+#: lib/tools.js:2345
 msgid "Signature validation failed"
 msgstr ""
 
-#: lib/tools.js:2332
-#: lib/tools.js:2338
-#: lib/tools.js:2343
+#: lib/tools.js:2368
+#: lib/tools.js:2374
+#: lib/tools.js:2379
 #: lib/ui-routes/account-routes.js:1149
 msgid "Invalid or expired account setup URL"
 msgstr ""
@@ -319,8 +319,8 @@ msgstr ""
 #: lib/ui-routes/account-routes.js:875
 #: lib/ui-routes/account-routes.js:1262
 #: lib/ui-routes/route-helpers.js:403
-#: workers/api.js:2334
-#: workers/api.js:2404
+#: workers/api.js:2325
+#: workers/api.js:2395
 msgid "Email Account Setup"
 msgstr ""
 
@@ -445,37 +445,37 @@ msgstr ""
 msgid "Couldn't process request. Try again."
 msgstr ""
 
-#: workers/api.js:2263
+#: workers/api.js:2254
 msgid ""
 "The sign-in was cancelled or the requested access was not granted. Open the "
 "account setup link again to retry."
 msgstr ""
 
-#: workers/api.js:2272
+#: workers/api.js:2263
 msgid "Sign-in with the email provider failed: %s"
 msgstr ""
 
-#: workers/api.js:2276
+#: workers/api.js:2267
 msgid "Sign-in with the email provider failed: no authorization code was received"
 msgstr ""
 
-#: workers/api.js:2282
+#: workers/api.js:2273
 msgid "Sign-in with the email provider failed: the request state is not valid"
 msgstr ""
 
-#: workers/api.js:2288
+#: workers/api.js:2279
 msgid ""
 "The account setup session has expired or was already used. Open the account "
 "setup link again to retry."
 msgstr ""
 
-#: workers/api.js:2295
+#: workers/api.js:2286
 msgid ""
 "Sign-in with the email provider failed: the stored setup session is not "
 "valid"
 msgstr ""
 
-#: workers/api.js:3161
-#: workers/api.js:3276
+#: workers/api.js:3152
+#: workers/api.js:3267
 msgid "Requested page not found"
 msgstr ""
